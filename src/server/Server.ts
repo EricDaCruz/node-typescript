@@ -1,9 +1,11 @@
 import express, { Request, Response } from "express";
 
+import { router } from "./routes";
+
 const server = express();
 
-server.get("/", (req: Request, res: Response) => {
-  return res.send("Hello World");
-});
+server.use(express.json());
+
+server.use(router);
 
 export { server };
