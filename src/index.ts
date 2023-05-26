@@ -1,5 +1,7 @@
 import { server } from "./server/Server";
 
-server.listen(3333, () =>
-  console.log("🚀 Server is running on http://localhost:3333")
+const port = process.env.PORT || 3333;
+
+server.listen(port, () =>
+  console.log(`🚀 Server is running on http://localhost:${port}`)
 );
