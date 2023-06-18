@@ -9,7 +9,12 @@ router.get("/", (req: Request, res: Response) => {
   return res.send("Hello Dev!");
 });
 
-router.post("/cities", CitiesController.create);
+router.post(
+  "/cities",
+  CitiesController.createBodyValidator,
+  CitiesController.createQueryValidator,
+  CitiesController.create
+);
 
 
 export { router };
