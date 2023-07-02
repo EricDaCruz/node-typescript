@@ -16,7 +16,7 @@ const bodyValidation: yup.Schema<ICity> = yup.object().shape({
 });
 
 const queryValidation: yup.Schema<IFilter> = yup.object().shape({
-  filter: yup.string().required().min(3),
+  filter: yup.string().optional().min(3),
 });
 
 export const createValidator = validation({
